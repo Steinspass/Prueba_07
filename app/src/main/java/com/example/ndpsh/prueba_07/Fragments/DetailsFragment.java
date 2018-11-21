@@ -28,7 +28,7 @@ public class DetailsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_details, container, false);
 
 
-        details = (TextView) view.findViewById(R.id.textViewDetails);
+        details = view.findViewById(R.id.textViewDetails);
 
         // Inflate the layout for this fragment
         return view;

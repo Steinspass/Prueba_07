@@ -44,13 +44,14 @@ public class FragmentData extends Fragment {
        View view = inflater.inflate(R.layout.fragment_fragment_data, container, false);
        //Logica para capturar los elementos de la UI
 
-        textData = (EditText) view.findViewById(R.id.editTextData);
-        btnSend = (Button) view.findViewById(R.id.buttonSend);
+        textData = view.findViewById(R.id.editTextData);
+        btnSend = view.findViewById(R.id.buttonSend);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendText(textData.getText().toString());
+                String textToSend = textData.getText().toString();
+                callback.sendData(textToSend);
             }
         });
 
@@ -66,5 +67,4 @@ public class FragmentData extends Fragment {
     public interface DataListener{
       void sendData(String text);
     }
-
 }
